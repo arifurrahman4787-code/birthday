@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arifur Rahman | Portfolio - Awwwards Honorable Mention Style</title>
+    
+    <!-- Space Grotesk Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for Minimalist Light Theme (Copied from image_0.png) */
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #000000;
+            --text-muted: #666666;
+            --accent: #e91e63; /* Red dot color from image_0.png logo */
+            --border: #f0f0f0;
+            --btn-color: #000000;
+            --btn-text: #ffffff;
+            --nav-link-color: #111111;
+        }
+
+        /* Base Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Layout & Sections */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        section {
+            padding: 10rem 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Header / Navigation (Matching image_0.png structure) */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+        
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1;
+            position: relative;
+        }
+        
+        .logo-dot {
+            width: 7px;
+            height: 7px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 2px;
+            vertical-align: top;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--nav-link-color);
+            font-weight: 500;
+        }
+        
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        
+        .lang-switch span {
+            cursor: pointer;
+        }
+        
+        .lang-active {
+            color: var(--text-main);
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 1px;
+        }
+
+        .header-cta-btn {
+            background-color: var(--btn-color);
+            color: var(--btn-text);
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Hero Section (Awwwards Honorable Mention Style based on image_0.png) */
+        .hero {
+            padding-top: 140px; /* Offset for nav */
+            position: relative;
+        }
+
+        .hero-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-greeting {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .massive-headline {
+            width: 100%;
+            max-width: 1200px;
+            line-height: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .headline-web {
+            font-size: clamp(4rem, 15vw, 16rem);
+            font-weight: 700;
+            color: var(--text-main);
+            position: relative;
+            margin-left: -5%;
+        }
+
+        /* Diagonal arrow button in text */
+        .headline-arrow-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(30px, 6vw, 70px);
+            height: clamp(30px, 6vw, 70px);
+            border: 1px solid var(--text-main);
+            border-radius: 50%;
+            font-size: clamp(1rem, 3vw, 2rem);
+            color: var(--text-main);
+            vertical-align: middle;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .headline-arrow-btn:hover {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        .headline-photo {
+            font-size: clamp(4rem, 15vw, 16rem);
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--text-main);
+            position: relative;
+            margin-top: -3%;
+            margin-left: 20%;
+        }
+
+        .hero-meta-logos {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5rem;
+            z-index: 3;
+            position: relative;
+        }
+
+        .hero-location {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .hero-logos-flex {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .hero-logos-flex img {
+            max-height: 25px;
+            opacity: 0.7;
+        }
+
+        /* Profile Image Integration (Positioned as in image_0.png) */
+        .profile-img-container {
+            width: 100%;
+            max-width: 1200px;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .profile-img {
+            max-width: 500px;
+            width: 90%;
+            height: auto;
+            object-fit: cover;
+            filter: grayscale(100%); /* Force B&W to match image_0.png */
+        }
+
+        /* Hero CTA Buttons */
+        .hero-cta-btns {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 10rem; /* Give space for the large headlines and photo */
+            z-index: 3;
+            position: relative;
+        }
+
+        .btn-black {
+            background-color: var(--btn-color);
+            color: var(--btn-text);
+            padding: 18px 36px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--btn-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            padding: 18px 36px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--text-main);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        /* Skills Section (Minimal Light Theme) */
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-tag {
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            background-color: var(--bg-color);
+        }
+
+        .skill-tag:hover {
+            border-color: var(--text-main);
+        }
+
+        /* Projects Section */
+        .project-card {
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* JavaScript Animations (Scroll Reveal) */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Pre-loading visibility for hero components */
+        .hero .hero-greeting, .hero .massive-headline, .hero .hero-meta-logos, .hero .profile-img-container, .hero .hero-cta-btns {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease 0.1s, transform 1s ease 0.1s;
+        }
+        
+        .hero.visible .hero-greeting { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+        .hero.visible .massive-headline { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+        .hero.visible .hero-meta-logos { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+        .hero.visible .profile-img-container { opacity: 1; transform: translateY(0); transition-delay: 0.7s; }
+        .hero.visible .hero-cta-btns { opacity: 1; transform: translateY(0); transition-delay: 0.9s; }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container, .nav-inner { padding: 0 2rem; }
+            section { padding: 8rem 0; }
+            .hero-greeting { max-width: 100%; }
+            .hero-meta-logos { flex-direction: column; gap: 2rem; align-items: center; margin-top: 3rem; }
+            .hero-location { text-align: center; }
+            .hero-logos-flex { justify-content: center; width: 100%; flex-wrap: wrap; }
+            .profile-img-container { position: relative; bottom: 0; margin-top: 3rem; margin-bottom: 2rem; transform: none; left: 0; }
+            .profile-img { max-width: 400px; }
+            .hero-cta-btns { margin-top: 2rem; }
+            .headline-web { margin-left: 0; }
+            .headline-photo { margin-left: 5%; margin-top: -1%; }
+            .logo-text { font-size: 1.4rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner { padding: 0 1rem; height: 80px; }
+            .container { padding: 0 1.5rem; }
+            .logo-text { font-size: 1.2rem; }
+            .header-cta-btn { font-size: 0.8rem; padding: 8px 18px; }
+            .massive-headline { margin-bottom: 0; }
+            .headline-photo { margin-top: -1%; }
+            .hero-cta-btns { flex-direction: column; width: 100%; align-items: center; }
+            .hero-cta-btns button { width: 100%; text-align: center; }
+            .profile-img-container { margin-top: 3rem; bottom: -20px; position: absolute; left: 50%; transform: translateX(-50%); max-width: 300px;}
+            .profile-img { width: 100%; max-width: 300px;}
+            .hero-meta-logos { margin-top: 1rem;}
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <span class="logo-text">Arifur<span class="logo-dot"></span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">Design</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="lang-switch">
+                    <span class="lang-active">EN</span>
+                    <span>/</span>
+                    <span>BD</span>
+                </li>
+            </ul>
+            <div class="header-cta-btn">hello@arifur.dev</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section (Replicating image_0.png) -->
+        <section id="about" class="hero">
+            <div class="hero-inner">
+                <p class="hero-greeting">👋, my name is Arifur Rahman and I am a freelance</p>
+                <h1 class="massive-headline">
+                    <span class="headline-web">Web</span><span class="headline-arrow-btn">↗</span><span class="headline-web">designer</span><br>
+                    <span class="headline-photo">& Photographer</span>
+                </h1>
+                
+                <div class="hero-meta-logos">
+                    <p class="hero-location">based in Dhaka, Bangladesh.</p>
+                    <div class="hero-logos-flex">
+                        <!-- Logos are SVGs or images. Replace with your actual client logos or just desaturated images -->
+                        <img src="https://upload.wikimedia.org/wikipedia/en/2/23/Spotify_logo_vertical_black.svg" alt="Spotify">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Nike_logo.svg/1280px-Nike_logo.svg.png" alt="Nike">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_Motors_logo.svg" alt="Tesla">
+                    </div>
+                </div>
+
+                <!-- Your Photo (Swap src below with your actual B&W photo file) -->
+                <div class="profile-img-container">
+                    <img src="imagelogo.png" alt="Arifur Rahman B&W Profile" class="profile-img" onerror="this.style.display='none';">
+                </div>
+
+                <div class="hero-cta-btns">
+                    <button class="btn-black">You need a designer</button>
+                    <button class="btn-outline">You need a photographer</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills" class="fade-in">
+            <h2 class="section-title">Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">HTML & CSS</div>
+                <div class="skill-tag">Git</div>
+                <div class="skill-tag">Firebase</div>
+                <div class="skill-tag">Netlify</div>
+                <div class="skill-tag">UI/UX</div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="fade-in">
+            <h2 class="section-title">Selected Works</h2>
+            
+            <div class="project-card">
+                <h3>Realtime Database Integration</h3>
+                <p>Architected and deployed a secure, synchronized data architecture utilizing cloud-based backend services.</p>
+                <div class="project-tech">
+                    <span>Firebase</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Interactive Web Application</h3>
+                <p>Developed responsive, logic-driven web interfaces optimized for seamless user experiences and continuous deployment.</p>
+                <div class="project-tech">
+                    <span>HTML/CSS</span>
+                    <span>Netlify</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="fade-in">
+            <h2 class="section-title">Connect</h2>
+            <div class="contact-info">
+                <p>GitHub: <a href="https://github.com/arifurrahman4787-code" target="_blank">@arifurrahman4787-code</a></p>
+                <p>Email: <a href="mailto:hello@arifur.dev">hello@arifur.dev</a></p>
+                <p>Ready to build something impactful? Let's talk.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript For Interactivity -->
+    <script>
+        // 1. Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 2. Intersection Observer for scroll-reveal animations
+        const observerOptions = {
+            root: null,
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((element) => {
+            observer.observe(element);
+        });
+        
+        // 3. Hero-specific reveal on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const hero = document.querySelector('.hero');
+            setTimeout(() => {
+                hero.classList.add('visible');
+            }, 100);
+        });
+
+        // 4. Logo Hover Effect (subtle red dot change)
+        const logo = document.querySelector('.logo');
+        const logoDot = document.querySelector('.logo-dot');
+        logo.addEventListener('mouseover', () => {
+            logoDot.style.backgroundColor = '#000000';
+        });
+        logo.addEventListener('mouseout', () => {
+            logoDot.style.backgroundColor = 'var(--accent)';
+        });
+        
+        // 5. Headling Arrow Button Hover
+        const headlineArrow = document.querySelector('.headline-arrow-btn');
+        headlineArrow.addEventListener('mouseover', () => {
+            headlineArrow.innerHTML = '👉';
+        });
+        headlineArrow.addEventListener('mouseout', () => {
+            headlineArrow.innerHTML = '↗';
+        });
+        
+        // 6. Language Switch interactivity (minimal)
+        document.querySelectorAll('.lang-switch span').forEach(span => {
+            span.addEventListener('click', () => {
+                if(span.innerHTML !== '/') {
+                    document.querySelector('.lang-switch .lang-active').classList.remove('lang-active');
+                    span.classList.add('lang-active');
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
